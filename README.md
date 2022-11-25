@@ -1,0 +1,1 @@
+# gr-semgrep-rules
