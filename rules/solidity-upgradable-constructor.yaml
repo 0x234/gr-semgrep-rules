@@ -1,0 +1,33 @@
+rules:
+  - id: solidity-upgradable-constructor
+    patterns:
+      - pattern-either:
+          - pattern: |
+              function initialize(...) public { 
+                  ...
+               }
+          - pattern: |
+              function initialize(...) external { 
+                  ...
+               }
+      - pattern-not: function initialize(...) initializer { ... }
+    message: Upgradable constructor detected without an initializer modifier
+    languages:
+      - solidity
+    severity: ERROR
+    metadata:
+      swc:
+        - none
+      technology:
+        - contracts
+        - openzeppelin
+        - library
+      category: security
+      references:
+        - https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable
+      subcategory:
+        - vuln
+      likelihood: HIGH
+      impact: HIGH
+      confidence: HIGH
+

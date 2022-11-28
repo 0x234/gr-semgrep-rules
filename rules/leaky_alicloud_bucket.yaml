@@ -1,0 +1,27 @@
+rules:
+  - id: leaky_alicloud_bucket
+    pattern: acl = "public-read-write"
+    message: Publicly read/write bucket detected. S3 buckets should not be publicly
+      writable. For more information please see
+      https://guardrails.io/docs/public_s3_bucket
+    languages:
+      - hcl
+    severity: ERROR
+    metadata:
+      owasp:
+        - A03:2017 - Sensitive Data Exposure
+        - A02:2021 - Cryptographic Failures
+      cwe:
+        - "CWE-326: Inadequate Encryption Strength"
+      technology:
+        - alicloud
+        - terraform
+      category: security
+      references:
+        - https://www.alibabacloud.com/help/en/object-storage-service/latest/security-and-compliance-overview
+      subcategory:
+        - vuln
+      likelihood: HIGH
+      impact: HIGH
+      confidence: HIGH
+
