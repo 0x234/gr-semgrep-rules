@@ -11,7 +11,7 @@ rules:
                   ...
                }
       - pattern-not: function initialize(...) initializer { ... }
-    message: Upgradable constructor detected without an initializer modifier
+    message: Upgradable constructor detected without an initializer modifier. For more information please see https://guardrails.io/docs/missing-upgradable-constructor
     languages:
       - solidity
     severity: ERROR
