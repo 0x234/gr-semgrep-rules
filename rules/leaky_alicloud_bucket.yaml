@@ -8,11 +8,9 @@ rules:
       - hcl
     severity: ERROR
     metadata:
-      owasp:
-        - A03:2017 - Sensitive Data Exposure
-        - A02:2021 - Cryptographic Failures
+      owasp: None
       cwe:
-        - "CWE-326: Inadequate Encryption Strength"
+        - "CWE-284: Improper Access Control"
       technology:
         - alicloud
         - terraform
@@ -24,4 +22,3 @@ rules:
       likelihood: HIGH
       impact: HIGH
       confidence: HIGH
-
